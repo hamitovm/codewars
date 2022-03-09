@@ -1,6 +1,6 @@
 // Sum without highest and lowest number
 function sumArray(array) {
-    if (array === null || array == 'None' || array.length < 3) { return 0; }
+    if (array === null || array === undefined || array == 'None' || array.length < 3) { return 0; }
     let sum = 0;
     let minmax = [array[0], array[0]];
       for (let i = 0; i < array.length; i++) {
@@ -11,4 +11,4 @@ function sumArray(array) {
         sum += array[i];
       }
       return sum - minmax[0] - minmax[1];
-  } 
+  }
