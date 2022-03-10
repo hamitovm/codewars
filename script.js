@@ -82,3 +82,24 @@ function sumArray(array) {
 
     // List Filtering (best practices - 1)
     const filter_list = l => l.filter(c => typeof c === 'number');
+
+    // Complementary DNA
+    function DNAStrand(dna) {
+      let newDNA = [];
+        for (let i = 0; i < dna.length; i++) {
+          if (dna[i] == 'A') {
+            newDNA.push('T')
+          } else if (dna[i] == 'T') {
+            newDNA.push('A')
+          } else if (dna[i] == 'C') {
+            newDNA.push('G')
+          } else if (dna[i] == 'G') {
+            newDNA.push('C')
+          }
+        }
+      return newDNA.join('');
+    }
+
+    // Complementary DNA (best practices - 1)
+    let pairs = {A:'T',T:'A',C:'G',G:'C'};
+const DNAStrand = dna => dna.replace(/./g, c => pairs[c]);
