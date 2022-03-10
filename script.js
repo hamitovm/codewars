@@ -33,4 +33,20 @@ function sumArray(array) {
 
   // Is he gonna survive? (best practices - 1)
   const hero = (bullets, dragons) => dragons * 2 <= bullets;
+
+  // Expressions Matter
+  function expressionMatter(a, b, c) {
+    let result1 = a + b + c;
+    let result2 = a + b * c;
+    let result3 = a * b * c;
+    let result4 = (a + b) * c;
+    let result5= a * (b + c);
+    let arr = [result1, result2, result3, result4, result5];
+    return Math.max.apply(Math, arr);
+  }
+
+   // Expressions Matter (best practices - 1)
+   function expressionMatter(a, b, c) {
+    return Math.max(a+b+c, a*b*c, (a+b)*c, a*(b+c));
+  }
     
