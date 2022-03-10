@@ -49,4 +49,22 @@ function sumArray(array) {
    function expressionMatter(a, b, c) {
     return Math.max(a+b+c, a*b*c, (a+b)*c, a*(b+c));
   }
-    
+
+  // Find the capitals
+  var capitals = function (word) {
+    let smallWord = word.toLowerCase();
+    let numbers = [];
+    for (let i = 0; i < word.length; i++) {
+      if (word[i] !== smallWord[i]) {
+        numbers.push(i);
+      }
+    }
+    return numbers;
+  };
+  
+  //   // Find the capitals (best practices - 1)
+  var capitals = function (word) {
+    return word.split('').reduce(function(memo, v, i) {
+      return v === v.toUpperCase() ? memo.concat(i) : memo;
+    }, []);
+  };
