@@ -21,3 +21,16 @@ function sumArray(array) {
       ? array.reduce((s, n) => s + n, 0) - Math.min(...array) - Math.max(...array)
       : 0
   }
+
+  // Is he gonna survive?
+  function hero(bullets, dragons){
+    //Get Coding!
+      if (dragons == 0) {
+        return true
+      }
+      return 2 <= bullets/dragons;
+    }
+
+  // Is he gonna survive? (best practices - 1)
+  const hero = (bullets, dragons) => dragons * 2 <= bullets;
+    
