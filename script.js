@@ -62,9 +62,23 @@ function sumArray(array) {
     return numbers;
   };
   
-  //   // Find the capitals (best practices - 1)
+  // Find the capitals (best practices - 1)
   var capitals = function (word) {
     return word.split('').reduce(function(memo, v, i) {
       return v === v.toUpperCase() ? memo.concat(i) : memo;
     }, []);
   };
+
+  // List Filtering
+  function filter_list(l) {
+    let newL = [];
+    for (let i = 0; i < l.length; i++) {
+      if (typeof(l[i]) == 'number') {
+        newL.push(l[i]);
+      }
+    }
+    return newL;
+  }
+
+    // List Filtering (best practices - 1)
+    const filter_list = l => l.filter(c => typeof c === 'number');
