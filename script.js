@@ -103,3 +103,23 @@ function sumArray(array) {
     // Complementary DNA (best practices - 1)
     let pairs = {A:'T',T:'A',C:'G',G:'C'};
 const DNAStrand = dna => dna.replace(/./g, c => pairs[c]);
+
+    // Complementary DNA (best practices - 2)
+    function DNAStrand(dna) {
+      return dna.split('').map(function(v) {return {A:'T', T:'A', C:'G', G:'C'}[v];}).join('');
+    }
+
+  // Sum of a sequence
+  const sequenceSum = (begin, end, step) => {
+    if (begin > end) {return 0};
+    let result = step + begin;
+    let sum = begin;
+   while (result <= end) {
+     sum += result;
+     result += step;
+   }
+    return sum;
+  };
+
+  // Sum of a sequence (best practices - 1)
+  sequenceSum = (b, e, s) =>  b > e ? 0 : b + sequenceSum(b + s, e, s);
